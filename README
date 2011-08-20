@@ -1,6 +1,8 @@
 PHPtoWord Alpha version - - August 20, 2011
 
-Description: The purpose of this class is to assist in outputting a Word document.  Trying to create an html page that will output to Word is time consuming and solutions as well as information on the web is currently very limited.  The class consists of 
+Description: The purpose of this class is to assist in outputting a Word document.  Trying to create an html page that will output to Word is time consuming and solutions as well as information on the web is currently very limited.  The class consists of function that make the file creation much more simple.  
+
+Available Functions: open(), paragraph(), linebreak(), pagebreak(), header(), footer(), setFont(), image(), table(), writefile(), bulletlist()...
 
 Future Project Plans: 
 1) Currently the class is setup so that the only option is the output the document as a file.  I would like to add the ability to display as a webpage as well.  This is easily done but the css needed for the layout to look correct in Word will not appear correct on the web and vica versa. 
@@ -11,6 +13,9 @@ Future Project Plans:
 6) Need to add more Word functionality (Pie Charts, Graphs, Links, Shapes, Bookmarks...)
 
 Feel free to email me at milespickens+git@gmail.com
+
+
+//Hello World example //helloworld.php
 
 
 
