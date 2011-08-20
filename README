@@ -1,6 +1,8 @@
 PHPtoWord Alpha version - - August 20, 2011
 
-Description: The purpose of this class is to assist in outputting a Word document.  Trying to create an html page that will output to Word is time consuming and solutions as well as information on the web is currently very limited.  The class consists of function that make the file creation much more simple.  
+Description: The purpose of this class is to assist in outputting a Word document.  
+
+Trying to create an html page that will output to Word is time consuming and solutions, as well as information on the web, is currently very limited.  This class consists of functions which make the file creation much more simple.  
 
 //Hello World example //helloworld.php
 
