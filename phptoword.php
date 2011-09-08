@@ -8,61 +8,29 @@
 *******************************************************************************/
 class PhpToWord
 {
-	var $font; //font name
-	var $fontsize; //font size
-	var $fontstyle; //italic, obliquie or normal
-	var $fontweight; //bold or normal
+	var $font =			'Times New Roman'; //font name
+	var $fontsize =			'12.0pt'; //font size
+	var $fontstyle =		'normal'; //italic, obliquie or normal
+	var $fontweight =		'normal'; //bold or normal
 	
-	function __construct(array $font=null)
+	function __construct(array $fontvars=null)
 	{
-		if(!is_null($font)){
-			if(is_null($font['font'])){
-				$this->font = 'Times New Roman';
-			} else {
-				$this->font = $font['font'];
-			}
-			if(is_null($font['fontstyle'])){
-				$this->fontstyle = 'normal';
-			} else {
-				$this->fontstyle = $font['fontstyle'];
-			}
-			if(is_null($font['fontsize'])){
-				$this->fontsize = '12.0pt';
-			} else {
-				$this->fontsize = $font['fontsize'].'.0pt';
-			}
-			if(is_null($font['fontweight'])){
-				$this->fontweight = 'normal';
-			} else {
-				$this->fontweight = $font['fontweight'];
-			}
-		}
+		if($font['font'])		$this->font = $font['font'];
+		if($fontvars['fontstyle'])	$this->fontstyle = $fontvars['fontstyle'];
+		if($font['fontsize'])		$this->fontsize = $font['fontsize'].'.0pt';
+		if($font['fontweight'])		$this->fontweight = $font['fontweight'];
+		
 	
 	}
 	
 	
 	function setFont($font=null, $fontstyle=null, $fontsize=null,$fontweight=null)
 	{
-		if(is_null($font)){
-			$this->font = 'Times New Roman';
-		} else {
-			$this->font = $font;
-		}
-		if(is_null($fontstyle)){
-			$this->fontstyle = 'normal';
-		} else {
-			$this->fontstyle = $fontstyle;
-		}
-		if(is_null($fontstyle)){
-			$this->fontsize = '12.0pt';
-		} else {
-			$this->fontsize = $fontsize;
-		}
-		if(is_null($fontweight)){
-			$this->fontweight = 'normal';
-		} else {
-			$this->fontweight = $fontweight;
-		}		
+		if($font)			$this->font =	$font;
+		if($fontstyle)			$this->fontstyle = $fontstyle;
+		if($fontsize)			$this->fontsize = $fontsize.'.0pt';
+		if($fontweight)			$this->fontweight = $fontweight;
+				
 	}
 	public function paragraph($txt,$align = null)
 	{
@@ -91,7 +59,7 @@ class PhpToWord
 	
 	public function doublespace()
 	{
-		echo "<span style='mso-spacerun:yes'>Â </span>";
+		echo "<span style='mso-spacerun:yes'> </span>";
 	}
 	
 	public function headertext($txt, $align=null)
@@ -128,11 +96,10 @@ class PhpToWord
 		echo $string;
 	}
 	
-	public function columns(array $content,$int)
+	public function columns(array $content, $int)
 	{
 		$push =				1;
-		if($int == 3)			$push = 2;
-		$string =			"<p class=MsoHeader font-family:{$this->font};font-size:{$this->fontsize};font-weight:{$this->fontweight};font-style:{$this->fontstyle};'>";			
+		$string =			"<p class=MsoHeader style='font-family:{$this->font};font-size:{$this->fontsize};font-weight:{$this->fontweight};font-style:{$this->fontstyle};'>";			
 		$count =			count($content);
 		if ($count > 3) {
 			echo			'Error, more than 3 columns!';
