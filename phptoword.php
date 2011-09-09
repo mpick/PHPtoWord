@@ -42,7 +42,7 @@ class PhpToWord
 		echo $string;
 	}
 	
-	public function writefile($filename)
+	public function writeFile($filename)
 	{
 		ini_set('auto_detect_line_endings', true);
 		$contents = file($filename);
@@ -57,12 +57,12 @@ class PhpToWord
 		
 	}
 	
-	public function doublespace()
+	public function doubleSpace()
 	{
 		echo "<span style='mso-spacerun:yes'> </span>";
 	}
 	
-	public function headertext($txt, $align=null)
+	public function headerText($txt, $align=null)
 	{
 		if(is_null($align)) $align = 'center';
 		$string = "<p class=MsoHeader align=center style='text-align:{$align}
@@ -89,7 +89,7 @@ class PhpToWord
 		echo $string;
 	}
 	
-	public function pagebreak()
+	public function pageBreak()
 	{
 		//$this->footer();
 		$string = "<br clear=all style='page-break-before:always'>";
@@ -135,7 +135,7 @@ class PhpToWord
 		}
 	}
 	
-	public function linebreak($x=null)
+	public function lineBreak($x=null)
 	{
 		if(!$x) $x = 1;
 		for($i=0;$i<$x;$i++){
@@ -171,7 +171,7 @@ class PhpToWord
 		
 	}
 	
-	public function bulletlist(array $content)
+	public function bulletedList(array $content)
 	{
 		$string = "<ul style='margin-top:0in' type=disc>";
 		foreach($content as $row){
