@@ -23,25 +23,7 @@ class PhpToWord
 	
 	}
 	
-	
-	function setFont($font=null, $fontstyle=null, $fontsize=null,$fontweight=null)
-	{
-		if($font)			$this->font =	$font;
-		if($fontstyle)			$this->fontstyle = $fontstyle;
-		if($fontsize)			$this->fontsize = $fontsize.'.0pt';
-		if($fontweight)			$this->fontweight = $fontweight;
-				
-	}
-	public function paragraph($txt,$align = null)
-	{
-		if(is_null($align)) $align = 'left';
-		$string = "<p class=MsoNormal align={$align} style='text-align:{$align} "
-			. "font-family:{$this->font};font-size:{$this->fontsize};font-weight:{$this->fontweight};font-style:{$this->fontstyle};'>"
-			. $txt
-			. '</p>';
-		echo $string;
-	}
-	
+
 	public function writefile($filename)
 	{
 		ini_set('auto_detect_line_endings', true);
@@ -55,6 +37,25 @@ class PhpToWord
 			}
 		}
 		
+	}	
+
+	function setFont($font=null, $fontstyle=null, $fontsize=null,$fontweight=null)
+	{
+		if($font)			$this->font =	$font;
+		if($fontstyle)			$this->fontstyle = $fontstyle;
+		if($fontsize)			$this->fontsize = $fontsize.'.0pt';
+		if($fontweight)			$this->fontweight = $fontweight;
+				
+	}
+
+	public function paragraph($txt,$align = null)
+	{
+		if(is_null($align)) $align = 'left';
+		$string = "<p class=MsoNormal align={$align} style='text-align:{$align} "
+			. "font-family:{$this->font};font-size:{$this->fontsize};font-weight:{$this->fontweight};font-style:{$this->fontstyle};'>"
+			. $txt
+			. '</p>';
+		echo $string;
 	}
 	
 	public function doublespace()
