@@ -9,7 +9,7 @@ Trying to create an html page that will output to Word is time consuming and sol
 Available Functions: open(), paragraph(), linebreak(), pagebreak(), header(), footer(), setFont(), image(), table(), writefile(), bulletlist()...
 
 Future Project Plans: 
-1) Add the ability to display as a webpage as well as output a file.  //This is easily done but the css needed for the layout to look correct in Word will not appear correct on the web and vica versa. 
+1) Add the ability to display as a webpage as well as output a file.  //This is easily done but the css needed for the layout to look correct in Word will not appear correct on the web and vice versa. 
 2) Improve footer function to appear at the true foot of the page.  //Right now the footer will appear wherever the current cursor placement is when calling the function. 
 3) Improve image resizing so that the image stays in proportion when only a Width or Height are given.
 4) Expand on the capabilities of table and list generation. 
